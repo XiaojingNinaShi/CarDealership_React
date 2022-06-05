@@ -105,7 +105,7 @@ app.post("/search", (req, res) => {
   const string = req.body.string;
 
   db.query(
-    `SELECT * from vehicles where Make  LIKE '%${string}%' OR Model LIKE '%${string}%'`,
+    `SELECT * from vehicles WHERE make LIKE '%${string}%' OR model LIKE '%${string}%' OR year LIKE '%${string}%' OR id LIKE '%${string}%'`,
     (err, result) => {
       if (err) {
         console.log(err);
